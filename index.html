@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Components</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <main class="app">
-        <button>Switch</button>
-        <h2>Currently active:</h2>
-        <component></component>
-
-    </main>
     <h1 class="hidden">Vue Components Page</h1>
-    <script src="js/main.js"></script>
+
+    <main class="app">
+        <!-- <button @click="switchComp">Switch</button> -->
+        <buttoncomp @setmediatype="setComp"></buttoncomp>
+        <h2>Currently active:</h2>
+        <!-- render comp using component tag -->
+        <!-- content is = to activeComp in .js -->
+        <component :is="activeComp"></component>
+    </main>
+
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="js/main.js" type="module"></script>
 </body>
 </html>
